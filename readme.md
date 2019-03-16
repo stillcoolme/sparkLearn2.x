@@ -1,5 +1,5 @@
 ## 项目介绍
-练手的spark项目，基于spark2.4
+spark基础项目
 
 # java/sql
 ## orgexample包：官方示例
@@ -10,7 +10,7 @@ JavaSparkSQLExample：
  3. RDD转成DataSets的两种方法。
  
 ## ipanalysis包：分析ip
-## topn： 货物订单topn
+## topn：货物订单topn
 ## 
 
 
