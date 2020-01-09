@@ -34,3 +34,12 @@ JavaSparkSQLExample：
   <version>2.7.3</version>
 </dependency>
 ```
+
+* window保存模型文件出错`(null) entry in command string: null chmod 0700`
+解决办法：
+在<https://github.com/SweetInk/hadoop-common-2.7.1-bin> 下载`winutils.exe`拷贝到`C:\hadoop\bin`目录，
+再将`C:\hadoop\bin`添加到环境变量中`%HADOOP_HOME%`。
+在<https://github.com/SweetInk/hadoop-common-2.7.1-bin>下载hadoop.dll，并拷贝到`c:\windows\system32`目录中。
+两个文件已经放在resources目录中
+
+
