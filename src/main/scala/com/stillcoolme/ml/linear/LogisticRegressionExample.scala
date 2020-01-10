@@ -25,14 +25,12 @@ object LogisticRegressionExample extends BaseSpark{
       row => (row.getAs[String](0).toDouble, row.getString(1).toDouble, rand.nextDouble()))
       .toDF("square", "price", "rand").sort("rand") //强制类型转换过程
 
-    // Dataset(Double, Double)
-    // Dataframe = Dataset(Row)
-
     val ass = new VectorAssembler().setInputCols(Array("square")).setOutputCol("features")
     val dataset = ass.transform(data) //特征包装
+    dataset.show(false)
 
-    // 训练集， 测试集
-    val Array(train, test) = dataset.randomSplit(Array(0.8, 0.2)) // 拆分成训练数据集和测试数据集
+    // 拆分成训练数据集和测试数据集
+    val Array(train, test) = dataset.randomSplit(Array(0.8, 0.2))
 
     val lr = new LogisticRegression()
       .setLabelCol("price")
